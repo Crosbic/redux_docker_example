@@ -1,5 +1,5 @@
 FROM node:21
-LABEL authors="OLEG YACKEVICH"
+LABEL authors="Crosbic"
 
 WORKDIR /app
 
