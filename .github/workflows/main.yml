@@ -39,3 +39,7 @@ jobs:
         push: true
         tags: |
           ghcr.io/crosbic/redux-docker-example:latest
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
