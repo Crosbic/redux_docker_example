@@ -26,4 +26,4 @@ jobs:
         context: .
         push: true
         tags: |
-          ghcr.io/Crosbic/redux-docker-example:latest
+          ghcr.io/crosbic/redux-docker-example:latest
