@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  // basePath: '/redux_docker_example'
+  basePath: '/redux_docker_example'
 };
 
 export default nextConfig;
