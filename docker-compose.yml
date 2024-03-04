@@ -1,6 +1,0 @@
-version: "3.9"
-services:
-  homepage:
-    image: ghcr.io/crosbic/redux-docker-example:latest
-    container_name: redux-docker-example
-    restart: unless-stopped

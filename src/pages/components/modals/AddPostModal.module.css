@@ -1,0 +1,20 @@
+.container {
+    width: 50vh;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formHeader {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.actions {
+    margin: 0 2rem 2rem 2rem;
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}

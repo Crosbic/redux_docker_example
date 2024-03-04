@@ -1,7 +1,12 @@
 import '@/styles/globals.css'
 
+import { ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { Provider } from 'react-redux'
+
+import { theme } from '@/common/theme'
+import { store } from '@/redux/store'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Provider store={store()}>
+          <Component {...pageProps} />
+        </Provider>
+      </ThemeProvider>
     </>
   )
 }
