@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 const initialState: any = [
   {
     id: 'id',
-    title: 'title',
-    description: 'description',
+    title: 'Пример карточки',
+    description: 'Пример описания (Съешь больше этих сладких булок)',
   },
 ]
 

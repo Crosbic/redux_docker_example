@@ -17,6 +17,8 @@ const AddPostModal = ({
   const [description, setDescription] = useState('')
 
   const dispatch = useDispatch()
+  const titleRegex = title.match(/^\S*/)
+  const descriptionRegex = description.match(/^\S*/)
 
   const handleCloseModal = () => {
     setOpenModal(false)
@@ -34,7 +36,7 @@ const AddPostModal = ({
     setTitle('')
     setDescription('')
 
-    // handleCloseModal()
+    handleCloseModal()
   }
 
   return (
@@ -52,6 +54,15 @@ const AddPostModal = ({
             variant="filled"
             value={title}
             onChange={(e: any) => setTitle(e.target.value)}
+            required
+            error={
+              titleRegex?.['0'] !== undefined && titleRegex?.['0'].length < 2
+            }
+            helperText={
+              titleRegex?.['0'] !== undefined && titleRegex?.['0'].length < 2
+                ? 'Минимум 2 символа'
+                : 'Название подходит'
+            }
           />
           <TextField
             label="Описание"
@@ -59,13 +70,35 @@ const AddPostModal = ({
             multiline
             value={description}
             onChange={(e: any) => setDescription(e.target.value)}
+            required
+            error={
+              descriptionRegex?.['0'] !== undefined &&
+              descriptionRegex?.['0'].length < 3
+            }
+            helperText={
+              descriptionRegex?.['0'] !== undefined &&
+              descriptionRegex?.['0'].length < 3
+                ? 'Минимум 3 символа'
+                : 'Описание подходит'
+            }
           />
         </div>
         <div className={styles.actions}>
-          <Button variant="contained" onClick={handleAddPost}>
+          <Button
+            variant="contained"
+            onClick={handleAddPost}
+            disabled={
+              (titleRegex?.['0'] !== undefined &&
+                titleRegex?.['0'].length < 2) ||
+              (descriptionRegex?.['0'] !== undefined &&
+                descriptionRegex?.['0'].length < 3)
+            }
+          >
             Добавить
           </Button>
-          <Button variant="contained">Отмена</Button>
+          <Button variant="contained" onClick={handleCloseModal}>
+            Отмена
+          </Button>
         </div>
       </Dialog>
     </>

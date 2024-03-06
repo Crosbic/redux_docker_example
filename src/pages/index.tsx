@@ -48,8 +48,14 @@ const Home = () => {
                     variant="outlined"
                     className={styles.postCard}
                   >
-                    <Typography>{post.title}</Typography>
-                    <Typography>{post.description}</Typography>
+                    <div>
+                      <Typography className={styles.postText}>
+                        {post.title}
+                      </Typography>
+                      <Typography className={styles.postText}>
+                        {post.description}
+                      </Typography>
+                    </div>
                     <Button
                       variant="outlined"
                       onClick={() => handleDeletePost(post.id)}
