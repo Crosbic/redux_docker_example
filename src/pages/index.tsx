@@ -45,7 +45,7 @@ const Home = () => {
                 return (
                   <Card
                     key={post.id}
-                    variant="outlined"
+                    // variant="outlined"
                     className={styles.postCard}
                   >
                     <div>
