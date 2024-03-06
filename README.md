@@ -5,4 +5,8 @@
 https://crosbic.github.io/redux_docker_example/
 
 Чтобы запустить проект локально
-bash```npm run dev```
+```bash
+npm run dev
+#или
+yarn dev
+```
