@@ -48,3 +48,9 @@
 .button {
     align-self: flex-end;
 }
+
+@media (max-width: 900px) {
+    .main {
+        margin: 1rem 2rem ;
+    }
+}
