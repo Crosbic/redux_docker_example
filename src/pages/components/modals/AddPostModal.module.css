@@ -18,3 +18,9 @@
     justify-content: flex-end;
     gap: 1rem;
 }
+
+@media (max-width: 550px) {
+    .container {
+        width: auto;
+    }
+}

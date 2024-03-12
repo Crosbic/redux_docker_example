@@ -61,6 +61,15 @@
     text-align: justify;
 }
 
+.postButtonsGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.postDeleteButton {
+    width: 60%;
+}
+
 .button {
     align-self: flex-end;
 }

@@ -1,3 +1,4 @@
+import { EditOutlined } from '@mui/icons-material'
 import { Button, Card, Typography } from '@mui/material'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
@@ -56,12 +57,18 @@ const Home = () => {
                         {post.description}
                       </Typography>
                     </div>
-                    <Button
-                      variant="outlined"
-                      onClick={() => handleDeletePost(post.id)}
-                    >
-                      Удалить
-                    </Button>
+                    <div className={styles.postButtonsGroup}>
+                      <Button variant="outlined" disabled>
+                        <EditOutlined />
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        className={styles.postDeleteButton}
+                        onClick={() => handleDeletePost(post.id)}
+                      >
+                        Удалить
+                      </Button>
+                    </div>
                   </Card>
                 )
               })

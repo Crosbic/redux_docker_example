@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 const initialState: any = [
   {
     id: 'id',
-    title: 'Пример карточки',
-    description: 'Пример описания (Съешь больше этих сладких булок)',
+    title: 'Французские булочки',
+    description: 'Съешь ещё этих мягких французских булок, да выпей чаю.',
   },
 ]
 
@@ -16,6 +16,14 @@ const postsSlice = createSlice({
       const { id, title, description } = action.payload
       state.push({ id, title, description })
     },
+    updatePost: (state, action: PayloadAction<any>) => {
+      const { id, title, description } = action.payload
+      const postIndex = state.findIndex((post: any) => post.id === id)
+      if (postIndex !== -1) {
+        state[postIndex].title = title
+        state[postIndex].description = description
+      }
+    },
     deletePost: (state, action: PayloadAction<any>) => {
       const postId = action.payload
 
@@ -24,5 +32,5 @@ const postsSlice = createSlice({
   },
 })
 
-export const { addPost, deletePost } = postsSlice.actions
+export const { addPost, updatePost, deletePost } = postsSlice.actions
 export default postsSlice.reducer
