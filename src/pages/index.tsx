@@ -43,16 +43,16 @@ const Home = () => {
             {posts.length ? (
               posts.map((post: any) => {
                 return (
-                  <Card
-                    key={post.id}
-                    // variant="outlined"
-                    className={styles.postCard}
-                  >
-                    <div>
-                      <Typography className={styles.postText}>
+                  <Card key={post.id} className={styles.postCard}>
+                    <div className={styles.postTextContainer}>
+                      <Typography
+                        className={`${styles.postText} ${styles.postHeader}`}
+                      >
                         {post.title}
                       </Typography>
-                      <Typography className={styles.postText}>
+                      <Typography
+                        className={`${styles.postText} ${styles.postDescription}`}
+                      >
                         {post.description}
                       </Typography>
                     </div>

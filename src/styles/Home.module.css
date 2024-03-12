@@ -41,8 +41,24 @@
 
 }
 
+.postTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .postText {
     overflow-wrap: break-word;
+}
+
+.postHeader {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.postDescription {
+    text-align: justify;
 }
 
 .button {
